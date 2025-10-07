@@ -253,7 +253,16 @@ def train_treeffn_seq2seq_model():
     
     # 创建TreeFFN Seq2Seq模型
     model = TreeFFNSeq2SeqARC(**model_config).to(device)
-    
+
+    # ===================================================================
+    # <<< PENEMPATAN IDEAL UNTUK VERIFIKASI AWAL ADA DI SINI >>>
+    logger.info("="*60)
+    logger.info("🔍 VERIFIKASI ARSITEKTUR MODEL AWAL:")
+    total_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
+    logger.info(f"✅ Total Parameter yang Dapat Dilatih: {total_params:,}")
+    # Anda bisa print detailnya juga di sini jika mau
+    logger.info("="*60)
+    # ===================================================================
     # 优化器配置 - 为所有TreeFFN的T参数设置特殊学习率
     tree_params = []
     other_params = []
