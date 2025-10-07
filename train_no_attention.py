@@ -142,7 +142,7 @@ class TreeFFNSeq2Seq(nn.Module):
     
     def __init__(self,
                  vocab_size: int,
-                 d_model: int = 256,
+                 d_model: int = 384,
                  n_layers: int = 3,
                  max_seq_len: int = 8192,
                  dropout: float = 0.1,
@@ -244,7 +244,7 @@ def train_treeffn_seq2seq_model():
     # 模型配置 - 纯TreeFFN Seq2Seq
     model_config = {
         'vocab_size': 17,
-        'd_model': 256,
+        'd_model': 384,
         'n_layers': 2,  # 每层有3个TreeFFN，所以层数可以少一些
         'max_seq_len': 8192,
         'dropout': 0.1,
