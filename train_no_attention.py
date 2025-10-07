@@ -274,7 +274,7 @@ def train_treeffn_seq2seq_model():
     logger.info(f"Model parameters: {sum(p.numel() for p in model.parameters()):,}")
     
     # 加载数据
-    train_dataset = ARCDataset('arc-prize-2025/arc-agi_training_challenges.json', max_length=8192)
+    train_dataset = ARCDataset('/kaggle/input/arc-prize-2025/arc-agi_training_challenges.json', max_length=8192)
     train_loader = DataLoader(
         train_dataset, 
         batch_size=1,  # 可以稍大一些，因为是并行处理
@@ -283,7 +283,7 @@ def train_treeffn_seq2seq_model():
         num_workers=0
     )
     
-    eval_dataset = ARCDataset('arc-prize-2025/arc-agi_evaluation_challenges.json', max_length=8192)
+    eval_dataset = ARCDataset('/kaggle/input/arc-prize-2025/arc-agi_evaluation_challenges.json', max_length=8192)
     tokenizer = ARCGridTokenizer()
     
     logger.info(f"Training samples: {len(train_dataset)}")
