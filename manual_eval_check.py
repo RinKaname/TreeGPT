@@ -49,7 +49,7 @@ def manual_evaluation(model, device, num_samples=5):
     logger.info(f"🔍 Manual evaluation on {num_samples} samples")
     
     # 加载eval数据
-    eval_dataset = ARCDataset('/kaggle/input/arc-prize-2025/arc-agi_evaluation_challenges.json', max_length=8192)
+    eval_dataset = ARCDataset('arc-prize-2025/arc-agi_evaluation_challenges.json', max_length=8192)
     tokenizer = ARCGridTokenizer()
     
     model.eval()
@@ -119,7 +119,7 @@ def manual_evaluation(model, device, num_samples=5):
             # 尝试解码输出网格（如果这是完整的ARC任务）
             try:
                 # 获取原始数据以了解任务结构
-                with open('/kaggle/input/arc-prize-2025/arc-agi_evaluation_challenges.json', 'r') as f:
+                with open('arc-prize-2025/arc-agi_evaluation_challenges.json', 'r') as f:
                     original_data = json.load(f)
                 
                 if sample_id in original_data:

@@ -302,6 +302,21 @@ This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENS
 
 ---
 
+## 📄 Citation to Original Owner
+
+If you use TreeGPT in your research, please cite the original owner:
+
+```bibtex
+@article{li2025treegpt,
+  title={TreeGPT: Pure TreeFFN Encoder-Decoder Architecture for Structured Reasoning},
+  author={Li, Zixi},
+  year={2025},
+  note={Pure TreeFFN implementation - no attention mechanisms}
+}
+```
+
+---
+
 ⭐ **Star this repository if you find the attention-free approach interesting!** ⭐
 
 **Pure TreeFFN. No Attention. Superior Results.**
